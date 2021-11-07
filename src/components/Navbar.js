@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
   render() {
@@ -29,18 +30,15 @@ export default class Navbar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/">Home</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/home">Home</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/business">Business</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/entertainment">Entertainment</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/general">General</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/health">Health</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/science">Science</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/sports">Sports</a></li>
-                <li className="nav-item"><a className="nav-link" aria-current="page" href="/technology">Technology</a></li>
+                <li className="nav-item"><Link className="nav-link" aria-current="page" to="/">Home</Link></li>
+                <li className="nav-item"><Link className="nav-link" aria-current="page" to="/business">Business</Link></li>
+                <li className="nav-item"><Link className="nav-link" aria-current="page" to="/entertainment">Entertainment</Link></li>
+                <li className="nav-item"><Link className="nav-link" aria-current="page" to="/health">Health</Link></li>
+                <li className="nav-item"><Link className="nav-link" aria-current="page" to="/science">Science</Link></li>
+                <li className="nav-item"><Link className="nav-link" aria-current="page" to="/sports">Sports</Link></li>
+                <li className="nav-item"><Link className="nav-link" aria-current="page" to="/technology">Technology</Link></li>
 
-  
-              </ul>
+             </ul>
 
               <div className="form-check form-switch">
                 <input

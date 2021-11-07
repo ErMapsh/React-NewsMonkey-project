@@ -1,10 +1,9 @@
 import React, { Component } from "react";
+// import PropTypes from 'prop-types'
 
 export default class Alert extends Component {
   render() {
-    const UP = (word)=>{
-      return word.toUpperCase();
-    }
+    
     return (
       this.props.alert && 
       (<div
@@ -12,7 +11,7 @@ export default class Alert extends Component {
         class = {`alert alert-${this.props.alert.type} text-center`}
         role="alert"
       >
-        {UP(this.props.alert.type)} ❤{this.props.alert.msg}❤ 
+        {this.props.UP(this.props.alert.type)} ❤{this.props.alert.msg}❤ 
       </div>)
     );
   }

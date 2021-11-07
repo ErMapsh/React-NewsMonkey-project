@@ -3,7 +3,6 @@ import Newsitem from "./Newsitem";
 import Spinner from "./Spinner";
 import PropTypes from 'prop-types'
 
-
 export default class News extends Component {
 
   static defaultProps = {
@@ -17,6 +16,7 @@ export default class News extends Component {
     pageSize: PropTypes.number,
     category: PropTypes.string
   }
+
   // articles = [
   //   {
   //     source: {
@@ -146,7 +146,7 @@ export default class News extends Component {
     // console.log("randering jsx")
     return (
       <div className="container my-3">
-        <h1 className="text-center">NewsMonkey - Top Headlines</h1>
+        <h1 className="text-center">{`NewsMonkey - Top ${this.props.UP(this.props.category)} Headlines`}</h1>
         {this.state.loading && <Spinner />}
         <div className="row centering">
           {!this.state.loading &&
@@ -161,6 +161,8 @@ export default class News extends Component {
                     imageurl={element.urlToImage}
                     newsurl={element.url}
                     mode={mode}
+                    author={element.author}
+                    date={element.publishedAt}
                   />
                 </div>
               );

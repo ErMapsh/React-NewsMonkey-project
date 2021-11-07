@@ -3,15 +3,16 @@ import React, { Component } from "react";
 
 export default class Newsitem extends Component {
   render() {
-    let { mode, title, description, imageurl, newsurl } = this.props;
+    let { mode, title, description, imageurl, newsurl, date, author } = this.props;
     // console.log("mode", this.props.mode);
 
     return (
       <div>
+
         <div
           className="card my-3"
           style={{
-            width: "18rem",
+            width: "21rem",
             color: mode === "Light" ? "white" : "black",
             background: mode === "Light" ? "black" : "white",
           }}
@@ -28,6 +29,7 @@ export default class Newsitem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
+            <p class="card-text"><small className="text-muted">Last updated {new Date(date).toGMTString()} mins ago By {author?author:"Unknown"}</small></p>
             <a
               href={newsurl}
               className="btn btn-sm btn-primary"
