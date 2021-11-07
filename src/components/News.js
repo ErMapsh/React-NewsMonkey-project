@@ -142,7 +142,7 @@ export default class News extends Component {
 
   render() {
     let { mode } = this.props;
-    console.log(mode);
+    // console.log(mode);
     // console.log("randering jsx")
     return (
       <div className="container my-3">

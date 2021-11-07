@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default class App extends Component {
   constructor() {
@@ -42,40 +42,25 @@ export default class App extends Component {
       this.setState(this.showAlert("Enable Light Mode", "success"));
     }
   };
+
+  
   render() {
     return (
       <div>
-          <Router>
-          <Navbar
-            mode={this.state.mode}
-            togglemode={this.togglemode}
-            NewsMonkey={this.state.NewsMonkey}
-          />
-          <Alert mode={this.state.mode} alert={this.state.alert} />
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-          <Switch>
-            <Route exact path="/">
-              <News
-                mode={this.state.mode}
-                pageSize={20}
-                country="in"
-                category="sports"
-              />
-            </Route>
+        <Navbar
+          mode={this.state.mode}
+          togglemode={this.togglemode}
+          NewsMonkey={this.state.NewsMonkey}
+        />
+        <Alert mode={this.state.mode} alert={this.state.alert} />
 
-            <Route exact path="/">
-              <News
-                mode={this.state.mode}
-                pageSize={20}
-                country="in"
-                category="business"
-              />
-            </Route>
-          </Switch>
-      </Router>
+        <News
+          mode={this.state.mode}
+          pageSize={20}
+          country="in"
+          category="sports"
+        />
       </div>
-
     );
   }
 }

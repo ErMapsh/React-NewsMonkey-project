@@ -4,7 +4,7 @@ import React, { Component } from "react";
 export default class Newsitem extends Component {
   render() {
     let { mode, title, description, imageurl, newsurl } = this.props;
-    console.log("mode", this.props.mode);
+    // console.log("mode", this.props.mode);
 
     return (
       <div>
