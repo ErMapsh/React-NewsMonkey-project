@@ -5,6 +5,7 @@ import News from "./components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
+  
   constructor() {
     super();
     this.state = {
@@ -25,7 +26,7 @@ export default class App extends Component {
         type: type,
       },
     });
-
+    
     // if we dont setup timeout for our warning , then is begin a bug.
     // we want to reslove this bug, then use this timeout
     setTimeout(() => {
@@ -47,7 +48,7 @@ export default class App extends Component {
     }
   };
 
-
+  
   render() {
     return (
       // <div>
