@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 
-
 export default class Newsitem extends Component {
   render() {
-    let { mode, title, description, imageurl, newsurl, date, author } = this.props;
+    let { mode, title, description, imageurl, newsurl, date, author, source } =
+      this.props;
     // console.log("mode", this.props.mode);
 
     return (
       <div>
-
         <div
           className="card my-3"
           style={{
@@ -17,6 +16,7 @@ export default class Newsitem extends Component {
             background: mode === "Light" ? "black" : "white",
           }}
         >
+          <span className={`badge bg-danger`}>{source}</span>
           <img
             src={
               imageurl
@@ -29,7 +29,12 @@ export default class Newsitem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
-            <p class="card-text"><small className="text-muted">Last updated {new Date(date).toGMTString()} mins ago By {author?author:"Unknown"}</small></p>
+            <p className="card-text">
+              <small className="text-muted">
+                Last updated {new Date(date).toGMTString()} mins ago By{" "}
+                {author ? author : "Unknown"}
+              </small>
+            </p>
             <a
               href={newsurl}
               className="btn btn-sm btn-primary"

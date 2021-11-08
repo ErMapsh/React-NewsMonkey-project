@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import Newsitem from "./Newsitem";
 import Spinner from "./Spinner";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 export default class News extends Component {
-
   static defaultProps = {
-    country: "in", 
-    pageSize : 20,
-    category: "general"
-  }
+    country: "in",
+    pageSize: 20,
+    category: "general",
+  };
 
-  PropTypes ={
+  PropTypes = {
     country: PropTypes.string,
     pageSize: PropTypes.number,
-    category: PropTypes.string
-  }
+    category: PropTypes.string,
+  };
 
   // articles = [
   //   {
@@ -101,7 +100,12 @@ export default class News extends Component {
 
   handlePrevClick = async () => {
     // console.log("Previous");
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=ac342991e9e74c5fa8485d455c279937&page=${this.state.page - 1
+    let url = `https://newsapi.org/v2/top-headlines?country=${
+      this.props.country
+    }&category=${
+      this.props.category
+    }&apiKey=ac342991e9e74c5fa8485d455c279937&page=${
+      this.state.page - 1
     }&pageSize=${this.props.pageSize}`;
 
     this.setState({ loading: true });
@@ -125,7 +129,11 @@ export default class News extends Component {
     ) {
       // console.log("Next");
       this.setState({ loading: true });
-      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=ac342991e9e74c5fa8485d455c279937&page=${
+      let url = `https://newsapi.org/v2/top-headlines?country=${
+        this.props.country
+      }&category=${
+        this.props.category
+      }&apiKey=ac342991e9e74c5fa8485d455c279937&page=${
         this.state.page + 1
       }&pageSize=${this.state.pageSize}`;
       let data = await fetch(url);
@@ -146,7 +154,9 @@ export default class News extends Component {
     // console.log("randering jsx")
     return (
       <div className="container my-3">
-        <h1 className="text-center">{`NewsMonkey - Top ${this.props.UP(this.props.category)} Headlines`}</h1>
+        <h1 className="text-center">{`NewsMonkey - Top ${this.props.UP(
+          this.props.category
+        )} Headlines`}</h1>
         {this.state.loading && <Spinner />}
         <div className="row centering">
           {!this.state.loading &&
@@ -163,6 +173,7 @@ export default class News extends Component {
                     mode={mode}
                     author={element.author}
                     date={element.publishedAt}
+                    source={element.source.name}
                   />
                 </div>
               );
