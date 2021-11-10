@@ -71,8 +71,8 @@ export default class News extends Component {
 
   // construtor run first & execute beacause he called in app.js, after that remaining fuctions execute
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     // console.log(
     //   "Hello, i am constructer from news item, this line executed when current/news class is called in another class"
     // );
