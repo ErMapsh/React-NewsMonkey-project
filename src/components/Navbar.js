@@ -8,8 +8,8 @@ export default class Navbar extends Component {
     let mystyle = { color: "white" };
 
     return (
-      <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div style={{height:"55px" }}>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
           <div className="container-fluid">
             <label className="navbar-brand" style={mystyle} href="/">
               {NewsMonkey}
