@@ -4,7 +4,7 @@ import React, { Component } from "react";
 export default class Alert extends Component {
   render() {
     return (
-      <div style={{ height: "50px" }}>
+      <div style={{height:"50px"}}>
         {this.props.alert && (
           <div
             className={`alert alert-${this.props.alert.type} text-center my-3`} 
