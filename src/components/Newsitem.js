@@ -39,7 +39,7 @@ export default class Newsitem extends Component {
               href={newsurl}
               className="btn btn-sm btn-primary"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Read More
             </a>
