@@ -1,4 +1,9 @@
-## before learning class based function things, we must know jsx, react js function based things
-- this project is only for understanding for learn class based function# react-NewsMonkey-project
-- this app cant deploy on githubg beacause of urls, github not good work with href/urls
-# React-NewsMonkey-project
+## We converting Newsmonkey Class based component to Function base component
+- logic is same but we will use some advantage of react hooks
+
+## Hooks in function base component
+- useState
+- useEffect
+- useContext
+- useRef"# Newsmonkeyfunctionbased" 
+# Newsmonkeyfunctionbased
